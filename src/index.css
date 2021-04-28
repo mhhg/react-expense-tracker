@@ -148,7 +148,7 @@ input[type='number']:focus {
   margin-bottom: 40px;
 }
 
-.list li {
+.transaction {
   background-color: #fff;
   box-shadow: var(--box-shadow);
   color: #333;
@@ -159,11 +159,11 @@ input[type='number']:focus {
   margin: 10px 0;
 }
 
-.list li.plus {
+.transaction.plus {
   border-right: 5px solid #2ecc71;
 }
 
-.list li.minus {
+.transaction.minus {
   border-right: 5px solid #c0392b;
 }
 .delete-btn {
@@ -184,7 +184,7 @@ input[type='number']:focus {
   transition: opacity 0.3s ease;
 }
 
-.list li:hover .delete-btn {
+.transaction:hover .delete-btn {
   opacity: 1;
 }
 
@@ -256,7 +256,7 @@ button:disabled {
   text-align: right;
 }
 
-.list li .transaction-wrapper {
+.transaction .transaction-wrapper {
   text-decoration: none;
   transition: transform 0.2s;
   width: 100%;
@@ -265,13 +265,8 @@ button:disabled {
   padding: 15px;
 }
 
-.list li span {
+.transaction span {
   float: right;
-}
-
-.list li:hover {
-  transform: scale(1.03);
-  background: lightgrey;
 }
 
 .list h5 {
@@ -304,4 +299,17 @@ button:disabled {
 
 .transaction-amount {
   font-weight: bold;
+}
+
+@media(max-width: 768px) {
+  .transaction {
+    margin-right: 30px;
+  }
+  .list svg {
+    opacity: 1;
+    right: -37px;
+    top: 25%;
+    left: unset;
+    transform: unset;
+  }
 }

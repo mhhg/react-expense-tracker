@@ -11,7 +11,7 @@ const TransactionList = ({ transactions, viewIncome, viewExpense }) => {
           <button className='btn btn-add'>Add Transaction</button>
         </Link>
       </div>
-      <ul className='list'>
+      <div className='list'>
         {transactions.length ? (
           <Group
             transactions={transactions}
@@ -21,7 +21,7 @@ const TransactionList = ({ transactions, viewIncome, viewExpense }) => {
         ) : (
           <h5 className='no-transactions'>No transactions.</h5>
         )}
-      </ul>
+      </div>
     </>
   )
 }

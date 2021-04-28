@@ -9,9 +9,9 @@ const Transaction = ({ transaction, deleteTransaction }) => {
   const history = useHistory()
 
   return (
-    <li
+    <div
       key={transaction.id}
-      className={transaction.amount < 0 ? 'minus' : 'plus'}
+      className={`transaction ${transaction.amount < 0 ? 'minus' : 'plus'}`}
     >
       <div
         className='transaction-wrapper'
@@ -29,7 +29,7 @@ const Transaction = ({ transaction, deleteTransaction }) => {
         className='delete-btn'
         onClick={() => deleteTransaction(transaction.id)}
       />
-    </li>
+    </div>
   )
 }
 
