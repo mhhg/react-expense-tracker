@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:root {
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.main {
+  justify-content: space-between;
+  margin: 10px;
+  align-items: center;
+}
+
+.container-money {
+  width: 350px;
+}
+
+.container-form {
+  width: 350px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.container-form label {
+  font-weight: bold;
+}
+
+h1 {
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  margin: 15 0 15 0;
+}
+
+h4 {
+  margin: 0;
+}
+
+.inc-exp-container {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0 5px;
+}
+
+.inc-exp-container > div {
+  flex: 1;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.inc-exp-container > div:first-of-type {
+  border-right: 1px solid grey;
+}
+
+.unselected {
+  opacity: 0.5;
+}
+
+.money {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+
+.money.plus {
+  color: #2ecc71;
+}
+
+.money.minus {
+  color: #c0392b;
+}
+
+span.tip {
+  font-size: 10px;
+}
+
+label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+input[type='text'],
+input[type='number'] {
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  border: 2px solid transparent;
+}
+
+input[type='text']:focus,
+input[type='number']:focus {
+  outline: none;
+  border-left: 2px solid rgb(8, 168, 196);
+}
+
+.btn {
+  cursor: pointer;
+  background-color: #e9c242;
+  box-shadow: var(--box-shadow);
+  color: #000;
+  border: 0;
+  display: block;
+  font-size: 16px;
+  margin: 20px 0 20px;
+  padding: 7px;
+  width: 45%;
+  display: inline-block;
+}
+
+.btn:focus,
+.delete-btn:focus {
+  outline: 0;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.list li {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+
+  position: relative;
+  margin: 10px 0;
+}
+
+.list li.plus {
+  border-right: 5px solid #2ecc71;
+}
+
+.list li.minus {
+  border-right: 5px solid #c0392b;
+}
+.delete-btn {
+  cursor: pointer;
+  background-color: #e74c3c;
+  border: 0;
+  color: #fff;
+  font-size: 28px;
+  line-height: 20px;
+  padding: 2px 4px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border-radius: 15px;
+  transform: translate(-100%, -50%);
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.list li:hover .delete-btn {
+  opacity: 1;
+}
+
+.balance {
+  background-color: #191d29;
+  color: lightgrey;
+  padding: 10px;
+  border-radius: 5px;
+}
+.balance h3 {
+  color: white;
+}
+.balance h3,
+.balance h4,
+.balance span {
+  display: inline-block;
+  width: 50%;
+}
+
+.balance span {
+  text-align: right;
+  font-size: small;
+}
+
+.balance input {
+  width: 70%;
+  display: inline-block;
+  padding: 5px;
+}
+
+.calendar {
+  position: absolute;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  width: 330px !important;
+}
+.calendar.show {
+  opacity: 1;
+  display: block;
+}
+
+.calendar.hide {
+  opacity: 0;
+  display: none;
+}
+
+.btn-cancel {
+  background: unset;
+}
+
+.btn-save {
+  float: right;
+}
+
+button:disabled {
+  background: grey;
+  cursor: not-allowed;
+}
+
+.btn-add {
+  margin: 10px 0 0px 0;
+}
+
+.no-transactions {
+  text-align: center;
+  width: 100%;
+}
+.add-container {
+  width: 100%;
+  text-align: right;
+}
+
+.list li .transaction-wrapper {
+  text-decoration: none;
+  transition: transform 0.2s;
+  width: 100%;
+  cursor: pointer;
+  height: 100%;
+  padding: 15px;
+}
+
+.list li span {
+  float: right;
+}
+
+.list li:hover {
+  transform: scale(1.03);
+  background: lightgrey;
+}
+
+.list h5 {
+  margin-bottom: 0px;
+}
+
+.balance svg {
+  transition: all 0.3s;
+  cursor: pointer;
+  margin-left: 15px;
+  font-size: larger;
+  opacity: 0.8;
+  font-weight: bold;
+  color: white;
+}
+
+.balance svg:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.transaction-date {
+  display: inline-block;
+  text-align: left;
+  width: 30px;
+  font-weight: bold;
+  border-right: 1px solid lightgrey;
+  margin-right: 10px;
+}
+
+.transaction-amount {
+  font-weight: bold;
+}
